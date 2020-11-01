@@ -15,7 +15,7 @@ The test GIFs are generated using [ImageMagick](https://imagemagick.org/index.ph
 
 The ImageMagick `convert` and `mogrify` commands can be overridden using the `CONVERT_COMMAND` and `MOGRIFY_COMMAND` environment variables.
 
-**NOTE**: ImageMagick currently has a [bug](https://github.com/ImageMagick/ImageMagick/issues/2560) that prevents it from outputting interlaced GIFs. The [animated_loop_interlaced.gif](gifs/animated_loop_interlaced.gif) in this repo has been generated using a patched version, so it is correctly interlaced.
+**NOTE**: Until 2020-09-28, ImageMagick had a [bug](https://github.com/ImageMagick/ImageMagick/issues/2560) that prevented it from outputting interlaced GIFs. The [animated_loop_interlaced.gif](gifs/animated_loop_interlaced.gif) in this repo has been generated using a version built after this date, so it is correctly interlaced. You may find that the version of ImageMagick provided by your OS package manager does not yet include this fix.
 
 ## Attribution
 
