@@ -132,6 +132,17 @@ ${CONVERT_COMMAND} -dispose none -delay 100 \
   -loop 0 \
   "${GIF_OUTPUT_DIR}/animated_transparent_frame_restoreprev_loop.gif"
 
+# Transparent gif with 4 frames, several out of bounds, loops forever
+${CONVERT_COMMAND} -dispose none -delay 100 \
+  -size 100x100 xc:transparent \
+  -page +200+0 -fill DarkSeaGreen -draw "circle 50,50 15,25" \
+  -dispose background -delay 100 \
+  -page +10+10 -size 30x30 xc:LightSalmon \
+  -page +30+30 -size 40x40 xc:SkyBlue \
+  -page +60+60 -size 50x50 xc:Khaki \
+  -loop 0 \
+  "${GIF_OUTPUT_DIR}/animated_transparent_loop_frames_out_of_bounds.gif"
+
 # Output individual coalesced frames
 for f in "${GIF_OUTPUT_DIR}"/*.gif; do
   ${CONVERT_COMMAND} +adjoin -coalesce "${f}" "${FRAME_OUTPUT_DIR}/$(basename "${f}" .gif).png"
